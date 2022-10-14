@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* wrapper for our dice */
+.wrap {
+    width: 200px;
+    height: 200px;
+    perspective: 400px;
+    font-size: 60px;
+    margin: 100px auto;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+  
+/* dice with 3d preserve */
+.dice {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+  
+/* dice sides */
+.dice-side {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+/* rotate dice sides and put 'em togehter into a dice */
+.dice-front {
+    transform: rotateY(0deg) translateZ(100px);
+    background-color: rgba(0, 128, 0, 0.7);
+}
+.dice-back {
+    transform: rotateY(180deg) translateZ(100px);
+    background-color: rgba(255, 255, 0, 0.7);
+}
+.dice-right {
+    transform: rotateY(90deg) translateZ(100px);
+    background-color: rgba(255, 0, 0, 0.7);
+}
+.dice-left {
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: rgba(0, 0, 255, 0.7);
+}
+.dice-top {
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: rgba(238, 130, 238, 0.7);
+}
+.dice-bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+/* centering text inside the dice */
+.dice-front,
+.dice-right,
+.dice-back,
+.dice-left,
+.dice-top,
+.dice-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* fixing the centration with counting the text pad */
+.dice-front span,
+.dice-right span,
+.dice-back span,
+.dice-left span,
+.dice-top span,
+.dice-bottom span {
+    margin-top: -10px;
+}
+
+/* wrap buttons */
+.btn-wrap {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* set btn width */
+.btn-stl {
+    width: 40px;
+}
